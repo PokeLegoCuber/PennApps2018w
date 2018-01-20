@@ -53,6 +53,24 @@ directionsDisplay.setOptions( { suppressMarkers: true } );
           zoom: 7,
           center: {lat: 41.85, lng: -87.65}
         });
+        var image = new google.maps.MarkerImage('https://ih0.redbubble.net/image.491649359.5698/raf,750x1000,075,t,322e3f:696a94a5d4.u2.jpg',
+                                                new google.maps.Size(25,25),
+                                                new google.maps.Point(0,0),
+                                                new google.maps.Point(0,25)
+                                                );
+        //you set your icon for each of the direction points Origin
+                var marker1 = new google.maps.Marker({
+                    position: new google.maps.LatLng(41.8333925,-88.0121478),
+                    map: map,
+                    icon: image
+                });
+//you set your icon for each of the direction points Destination,
+                var marker2 = new google.maps.Marker({
+                    position: new google.maps.LatLng(38.6530796,-90.3135015),
+                    map: map,
+                    icon: image
+                });
+        
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById('right-panel'));
 
