@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Custom Markers</title>
+    <title>ucantCme</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+<link rel ="stylesheet" type ="text/css" href = "ucantseeme.css">
   </head>
-  <body>
-    <div id="map"></div>
+
+<body>
+<div id="map"></div>
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
+          zoom: 16,  
           center: new google.maps.LatLng(-33.91722, 151.23064),
           mapTypeId: 'roadmap'
         });
 
-        var iconBase = 'images/';
+        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
         var icons = {
           parking: {
             icon: iconBase + 'parking_lot_maps.png'
@@ -118,6 +107,6 @@
     </script>
 <!--AIzaSyC2vsd9QlxipVbXFSxOwOZeoWQmB6S_0l0 Google API Maps Keys-->
     
-  </body>
+</body>
 </html>
 
