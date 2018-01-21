@@ -21,26 +21,26 @@
         <option value="uhack">UHack</option>
         <option value="hoyahacks">Hoya Hacks</option>
         <option value="wichacks">WiCHacks</option>
-        <option value="hackarizona">HackArizona</option>
-        <option value="hackprinceton">HackPrinceton</option>
-        <option value="calhacks">Cal Hacks 4.0</option>
-        <option value="hackthenorth">Hack the North</option>
+        <option value="32.2318851,-110.9522981">Hack Arizona</option>
+        <option value="40.3439888,-74.6536368">HackPrinceton</option>
+        <option value="37.8718992,-122.2607286">Cal Hacks 4.0</option>
+        <option value="43.4722854,-80.5470463">Hack the North</option>
       </select>
       <br>
       <strong>End:</strong>
        <select id="end" onchange=assignCoord(this.value)>
-        <option value="pennapps">PennApps</option>
-        <option value="hackny">HackNY</option>
-        <option value="hackru">HackRU</option>
-        <option value="hackharvard">HackHarvard</option>
-        <option value="yhack">YHack</option>
-        <option value="uhack">UHack</option>
-        <option value="hoyahacks">Hoya Hacks</option>
-        <option value="wichacks">WiCHacks</option>
-        <option value="hackarizona">Hack Arizona</option>
-        <option value="hackprinceton">HackPrinceton</option>
-        <option value="calhacks">Cal Hacks 4.0</option>
-        <option value="hackthenorth">Hack the North</option>
+        <option value="39.9522188,-75.1954024">PennApps</option>
+        <option value="40.8075355,-73.9647614">HackNY</option>
+        <option value="40.5008186,-74.4495878">HackRU</option>
+        <option value="42.3770029,-71.1188488">HackHarvard</option>
+        <option value="41.3163244,-72.9245318">YHack</option>
+        <option value="25.7547833,-80.2563997">UHack</option>
+        <option value="38.9076089,-77.0744472">Hoya Hacks</option>
+        <option value="43.0861017,-77.672703">WiCHacks</option>
+        <option value="32.2318851,-110.9522981">Hack Arizona</option>
+        <option value="40.3439888,-74.6536368">HackPrinceton</option>
+        <option value="37.8718992,-122.2607286">Cal Hacks 4.0</option>
+        <option value="43.4722854,-80.5470463">Hack the North</option>
       </select>
     </div>
     <div id="right-panel"></div>
@@ -66,10 +66,9 @@
               ['uhack','25.7547833','-80.2563997'],
               ['hoyahacks','38.9076089','-77.0744472'],
               ['wichacks','43.0861017','-77.672703'],
-              ['hackarizona','32.2318851','-110.9522981'],
-              ['hackprinceton','40.3439888','-74.6536368'],
-              ['calhacks','37.8718992','-122.2607286'],
-              ['hackthenorth','43.4722854','-80.5470463']
+              ['uhack','25.7547833','-80.2563997'],
+              ['uhack','25.7547833','-80.2563997'],
+              ['uhack','25.7547833','-80.2563997'],
               
           ];
           
@@ -106,6 +105,11 @@
 //directionsDisplay.setMap(map);
 //directionsDisplay.setOptions( { suppressMarkers: true } );
         
+<<<<<<< HEAD
+=======
+directionsDisplay.setMap(map);
+directionsDisplay.setOptions( { suppressMarkers: true } );
+>>>>>>> parent of 31e915f... All values replaced with name of event
       function initMap() {
 //        ({suppressMarkers: true}) add this to end of directions renderer to get rid of direction markers
         var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
