@@ -5,15 +5,21 @@
     <meta charset="utf-8">
     <title> do u no da wae <code>setPanel()</code></title>
 <link rel ="stylesheet" type ="text/css" href = "mapDirections.css">
+      <script>
+    
+      </script>
   </head>
   <body>
+      
+      
+<center><img src="images/de_wae_logo_1.png" width="450" height="150"></center>
     <div id="floating-panel">
       <strong>Start:</strong>
-      <select id="start">
-        <option value="39.9522188,-75.1954024">PennApps</option>
-        <option value="40.8075355,-73.9647614">HackNY</option>
-        <option value="40.5008186,-74.4495878">HackRU</option>
-        <option value="42.3770029,-71.1188488">HackHarvard</option>
+      <select id="start" onchange=assignCoord(this.value)>
+        <option value="pennapps">PennApps</option>
+        <option value="hackny">HackNY</option>
+        <option value="hackru">HackRU</option>
+        <option value="hackharvard">HackHarvard</option>
         <option value="41.3163244,-72.9245318">YHack</option>
         <option value="25.7547833,-80.2563997">UHack</option>
         <option value="38.9076089,-77.0744472">Hoya Hacks</option>
@@ -25,7 +31,7 @@
       </select>
       <br>
       <strong>End:</strong>
-      <select id="end">
+       <select id="end" onchange=assignCoord(this.value)>
         <option value="39.9522188,-75.1954024">PennApps</option>
         <option value="40.8075355,-73.9647614">HackNY</option>
         <option value="40.5008186,-74.4495878">HackRU</option>
@@ -42,7 +48,55 @@
     </div>
     <div id="right-panel"></div>
     <div id="map"></div>
+<!-- End of HTML lines   -->
+      
+      
+      
+      
+      
     <script>
+        
+      
+
+//alert('test');  
+        var searchAr = [
+              ['pennapps','39.9522188','75.1954024'],
+              ['hackny','40.8075355','-73.9647614'],
+              ['hackru','40.5008186','-74.4495878'],
+              ['hackharvard','42.3770029','-71.1188488']
+              
+          ];
+          
+        
+        
+        function assignCoord(valueI){
+               
+            var index = -1;
+            var i = 0;
+            for(i=0; i<searchAr.length; i++){
+                
+                if(searchAr[i][0]==valueI){
+                    index = i;
+                }
+                
+            }
+            
+            alert(searchAr[index][0]); //place
+            alert(searchAr[index][1]); //x value
+            alert(searchAr[index][2]); //y value
+            /*
+            var marker1 = new google.maps.Marker({
+                    position: new google.maps.LatLng(39.9522188,-75.1954024),
+                    map: map,
+                    icon: image
+                });
+            */
+        
+        }
+        
+        
+        
+        
 directionsDisplay.setMap(map);
 directionsDisplay.setOptions( { suppressMarkers: true } );
       function initMap() {
@@ -54,10 +108,18 @@ directionsDisplay.setOptions( { suppressMarkers: true } );
           center: {lat: 39.9522188, lng: -75.1954024}
         });
         var image = new google.maps.MarkerImage('images/ugandan_knuckles32.png',
+//                                                this marker is 22 pixels wide and 40 pixels tall
                                                 new google.maps.Size(22,40),
+                                                //The origin for the point is 0,0
                                                 new google.maps.Point(0,0),
+                                                //The anchor for the image is the base of the flagpole at 0,40
                                                 new google.maps.Point(0,40)
                                                 );
+          
+          
+//          var e = document.getElementById("start");
+//          var strUser = e.options[e.selectedIndex].value;
+//          
 //you set your icon for each of the direction points Origin
                 var marker1 = new google.maps.Marker({
                     position: new google.maps.LatLng(39.9522188,-75.1954024),
@@ -87,6 +149,7 @@ directionsDisplay.setOptions( { suppressMarkers: true } );
       }
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        //test variables if image can change based on location, .value gets the value in the select
         var start = document.getElementById('start').value;
         var end = document.getElementById('end').value;
         directionsService.route({
